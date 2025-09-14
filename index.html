@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <title>e-Aduan SEMSIRA</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f6f9; text-align:center; }
+    header { background:#002147; color:#fff; padding:20px; display:flex; align-items:center; justify-content:center; position:relative; }
+    header img { height:70px; margin-right:15px; }
+    header h1 { margin:0; font-size:26px; }
+    .container { max-width:1100px; margin:40px auto; background:#fff; padding:30px; border-radius:12px; box-shadow:0 3px 8px rgba(0,0,0,0.1); }
+    h2 { color:#002147; margin-top:0; }
+    p { color:#333; }
+    .btn { display:inline-block; margin:20px; padding:15px 30px; font-size:18px; text-decoration:none; color:#fff; border-radius:6px; transition:0.3s; background:#004080; }
+    .btn:hover { background:#0066cc; transform:scale(1.05); }
+    footer { margin-top:40px; padding:20px; background:#002147; color:#fff; font-size:14px; }
+    .dark-mode { background:#1e1e1e; color:#e0e0e0; }
+    .dark-mode header, .dark-mode footer { background:#111; }
+    .dark-mode .container { background:#2c2c2c; color:#e0e0e0; }
+    .dark-toggle { position:absolute; top:20px; right:20px; background:#444; color:#fff; border:none; padding:10px; border-radius:6px; cursor:pointer; }
+
+    /* Ahli MPP */
+    .team { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:30px; }
+    .card { background:#f9f9f9; border-radius:10px; padding:15px; width:200px; box-shadow:0 3px 6px rgba(0,0,0,0.1); transition:0.3s; }
+    .card:hover { transform:translateY(-5px); box-shadow:0 6px 12px rgba(0,0,0,0.2); }
+    .card img { width:100%; border-radius:10px; }
+    .card h3 { margin:10px 0 5px; color:#002147; }
+    .card p { margin:0; font-weight:bold; color:#555; }
+
+    /* Misi & Visi */
+    .mission, .vision { margin-top:30px; text-align:left; }
+    .mission ul { text-align:left; }
+    .mission li { margin:8px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo Sekolah">
+    <h1>e-Aduan SEMSIRA</h1>
+    <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+  </header>
+
+  <div class="container">
+    <h2>Selamat Datang ke Sistem e-Aduan</h2>
+    <p>Sistem ini disediakan untuk memudahkan pelajar membuat aduan secara atas talian dengan pantas dan telus.</p>
+    <a href="pelajar.html" class="btn">📌 Masuk Portal Pelajar</a>
+
+    <!-- Ahli MPP -->
+    <h2>Ahli MPP</h2>
+    <div class="team">
+      <div class="card">
+        <img src="pengerusi.jpg" alt="Pengerusi">
+        <h3>Intan Syafiqah</h3>
+        <p>Pengerusi</p>
+      </div>
+      <div class="card">
+        <img src="timbalan.jpg" alt="Timbalan Pengerusi">
+        <h3>Zakwan</h3>
+        <p>Timbalan Pengerusi</p>
+      </div>
+      <div class="card">
+        <img src="setiausaha.jpg" alt="Setiausaha">
+        <h3>Chirhasak</h3>
+        <p>Setiausaha</p>
+      </div>
+      <div class="card">
+        <img src="bendahari.jpg" alt="Bendahari">
+        <h3>Foo</h3>
+        <p>Bendahari</p>
+      </div>
+      <div class="card">
+        <img src="penolong.jpg" alt="Penolong Bendahari">
+        <h3>Rafiuddin</h3>
+        <p>Penolong Bendahari</p>
+      </div>
+    </div>
+
+    <!-- Misi -->
+    <div class="mission">
+      <h2>Misi</h2>
+      <ul>
+        <li>Memperjuangkan kebajikan pelajar.</li>
+        <li>Meningkatkan komunikasi antara pelajar dan pihak sekolah.</li>
+        <li>Menyediakan platform aduan yang telus dan berkesan.</li>
+      </ul>
+    </div>
+
+    <!-- Visi -->
+    <div class="vision">
+      <h2>Visi</h2>
+      <p>Menjadi kepimpinan pelajar yang berintegriti, prihatin dan proaktif dalam menjayakan aspirasi sekolah.</p>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 SEMSIRA | Dibangunkan oleh MPP
+  </footer>
+
+  <script>
+    function toggleDarkMode(){
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+</body>
+</html>
