@@ -1,159 +1,177 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portal Rasmi MPP SEMSIRA</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-<style>
-body { font-family: 'Poppins', sans-serif; background:#f8f9fa; }
-header { background:#004080; color:white; padding:40px 20px; text-align:center; }
-header h1 { font-weight:700; font-size:2.5rem; }
-.mpp-section { padding:60px 20px; background:white; }
-.mpp-member { border:none; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:transform 0.3s; opacity:0; }
-.mpp-member:hover { transform:scale(1.05); }
-.fade-in { animation: fadeInUp 1s forwards; }
-@keyframes fadeInUp {
-  from { opacity:0; transform:translateY(40px); }
-  to { opacity:1; transform:translateY(0); }
-}
-.home-btn { text-align:center; margin-top:20px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portal Rasmi MPP SEMSIRA</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background:#f8f9fa; }
+    header { background:#004080; color:white; padding:40px 20px; text-align:center; }
+    header h1 { font-weight:700; font-size:2.5rem; }
+    .mpp-section { padding:60px 20px; background:white; }
+    .mpp-member { border:none; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:transform 0.3s; opacity:0; text-align:center; }
+    .mpp-member:hover { transform:scale(1.05); }
+    .fade-in { animation: fadeInUp 1s forwards; }
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(40px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+    .misi-visi { padding:60px 20px; text-align:center; }
+    .misi-visi h2 { font-family:'Playfair Display', serif; font-size:2rem; margin-bottom:20px; }
+    .misi-visi p { font-size:1.1rem; }
+    .btn-aduan { display:inline-block; margin-top:30px; padding:12px 24px; background:#004080; color:white; font-weight:600; border-radius:8px; text-decoration:none; transition:0.3s; }
+    .btn-aduan:hover { background:#0066cc; }
+  </style>
 </head>
 <body>
 
 <header>
-  <h1 id="title">Portal Rasmi MPP SEMSIRA</h1>
-  <p id="subtitle">Majlis Perwakilan Pelajar</p>
-
-  <!-- Language Selector -->
-  <div class="mt-3">
-    <select id="languageSwitcher" class="form-select w-auto d-inline">
-      <option value="ms">🇲🇾 BM</option>
-      <option value="en">🇬🇧 EN</option>
-      <option value="zh">🇨🇳 中文</option>
-    </select>
-  </div>
-
-  <!-- Button to Portal Pelajar -->
-  <div class="home-btn">
-    <a id="studentPortalBtn" href="portal_pelajar.html" class="btn btn-light btn-lg">➡️ Portal Pelajar Aduan</a>
-  </div>
+  <h1 id="headerTitle">PORTAL RASMI MPP SEMSIRA</h1>
+  <p id="headerSub">Majlis Perwakilan Pelajar</p>
+  <select id="languageSwitcher" class="form-select w-auto d-inline mt-3">
+    <option value="ms">🇲🇾 BM</option>
+    <option value="en">🇬🇧 EN</option>
+    <option value="zh">🇨🇳 中文</option>
+  </select>
 </header>
 
 <!-- Ahli MPP -->
-<section class="mpp-section text-center">
-  <h2 class="mb-4" id="mppTitle">Ahli Majlis Perwakilan Pelajar</h2>
+<section class="mpp-section">
+  <h2 id="membersTitle" class="text-center mb-4">AHLI MAJLIS PERWAKILAN PELAJAR</h2>
   <div class="row justify-content-center g-4">
     <div class="col-md-3">
       <div class="card p-3 mpp-member">
-        <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle" alt="Ahli">
+        <img src="images/intan.png" class="card-img-top rounded-circle" alt="Pengerusi">
         <div class="card-body">
-          <h5 class="card-title">Intan Syafiqah</h5>
-          <p class="card-text">Pengerusi</p>
+          <h5 class="card-title">INTAN SYAFIQAH BINTI BAHAUDDIN SELAMET</h5>
+          <p class="card-text"><b>Pengerusi</b></p>
         </div>
       </div>
     </div>
     <div class="col-md-3">
       <div class="card p-3 mpp-member">
-        <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle" alt="Ahli">
+        <img src="images/nur.png" class="card-img-top rounded-circle" alt="Timbalan Pengerusi">
         <div class="card-body">
-          <h5 class="card-title">NUR ZAKWAN</h5>
-          <p class="card-text">Timbalan Pengerusi</p>
+          <h5 class="card-title">MUHAMMAD NUR ZAKWAN BIN MUHAMMAD HAFIZULLAH</h5>
+          <p class="card-text"><b>Timbalan Pengerusi</b></p>
         </div>
       </div>
     </div>
     <div class="col-md-3">
       <div class="card p-3 mpp-member">
-        <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle" alt="Ahli">
+        <img src="images/chir.png" class="card-img-top rounded-circle" alt="Setiausaha">
         <div class="card-body">
-          <h5 class="card-title">Chi Minh</h5>
-          <p class="card-text">Setiausaha</p>
+          <h5 class="card-title">CHIRHASAK SUWANSOMPHONG</h5>
+          <p class="card-text"><b>Setiausaha</b></p>
         </div>
       </div>
     </div>
     <div class="col-md-3">
       <div class="card p-3 mpp-member">
-        <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle" alt="Ahli">
+        <img src="images/foo.png" class="card-img-top rounded-circle" alt="Bendahari">
         <div class="card-body">
-          <h5 class="card-title">Aisyah Rahman</h5>
-          <p class="card-text">Penolong Setiausaha</p>
+          <h5 class="card-title">FOO KAH SIANG</h5>
+          <p class="card-text"><b>Bendahari</b></p>
         </div>
       </div>
     </div>
     <div class="col-md-3">
       <div class="card p-3 mpp-member">
-        <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle" alt="Ahli">
+        <img src="images/nurin.png" class="card-img-top rounded-circle" alt="Penolong Setiausaha">
         <div class="card-body">
-          <h5 class="card-title">Hafiz Amir</h5>
-          <p class="card-text">Bendahari</p>
+          <h5 class="card-title">NURIN ATEEQAH YASMIM BINTI NOR AZEMI</h5>
+          <p class="card-text"><b>Penolong Setiausaha</b></p>
         </div>
       </div>
     </div>
     <div class="col-md-3">
       <div class="card p-3 mpp-member">
-        <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle" alt="Ahli">
+        <img src="images/rafi.png" class="card-img-top rounded-circle" alt="Penolong Bendahari">
         <div class="card-body">
-          <h5 class="card-title">Sarah Lim</h5>
-          <p class="card-text">Penolong Bendahari</p>
+          <h5 class="card-title">RAFIUDDIN</h5>
+          <p class="card-text"><b>Penolong Bendahari</b></p>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="text-center">
+    <a href="https://adam007-bit.github.io/PORTAL-E-ADUAN-MPP/" target="_blank" class="btn-aduan" id="portalBtn">➡️ Portal Pelajar Aduan</a>
+  </div>
+</section>
+
+<!-- Misi & Visi -->
+<section class="misi-visi">
+  <h2 id="missionTitle">🎯 Misi</h2>
+  <p id="missionText">
+1. Mewujudkan suasana kampus yang inklusif, di mana setiap pelajar dihargai tanpa mengira perbezaan.<br>
+2. Menjadi jambatan adil antara pelajar dan pihak pengurusan agar setiap suara didengar dan dihargai.
+  </p>
+
+  <h2 id="visionTitle" class="mt-5">🪶 Visi</h2>
+  <p id="visionText">
+Membentuk komuniti pelajar yang bersatu, harmoni dan sentiasa bersyukur dengan nikmat yang ada.
+  </p>
 </section>
 
 <script>
-const translations = {
-  ms: {
-    title: "Portal Rasmi MPP SEMSIRA",
-    subtitle: "Majlis Perwakilan Pelajar",
-    btnText: "➡️ Portal Pelajar Aduan",
-    mppTitle: "Ahli Majlis Perwakilan Pelajar"
-  },
-  en: {
-    title: "Official SEMSIRA Student Council Portal",
-    subtitle: "Majlis Perwakilan Pelajar",
-    btnText: "➡️ Student Complaint Portal",
-    mppTitle: "Student Council Members"
-  },
-  zh: {
-    title: "SEMSIRA 学生会官方网站",
-    subtitle: "学生代表理事会",
-    btnText: "➡️ 学生投诉门户",
-    mppTitle: "学生会成员"
-  }
-};
+  const translations = {
+    ms: {
+      headerTitle: "PORTAL RASMI MPP SEMSIRA",
+      headerSub: "Majlis Perwakilan Pelajar",
+      membersTitle: "AHLI MAJLIS PERWAKILAN PELAJAR",
+      missionTitle: "🎯 Misi",
+      missionText: "1. Mewujudkan suasana kampus yang inklusif, di mana setiap pelajar dihargai tanpa mengira perbezaan.<br>2. Menjadi jambatan adil antara pelajar dan pihak pengurusan agar setiap suara didengar dan dihargai.",
+      visionTitle: "🪶 Visi",
+      visionText: "Membentuk komuniti pelajar yang bersatu, harmoni dan sentiasa bersyukur dengan nikmat yang ada.",
+      portalBtn: "➡️ Portal Pelajar Aduan"
+    },
+    en: {
+      headerTitle: "OFFICIAL SEMSIRA STUDENT COUNCIL PORTAL",
+      headerSub: "Majlis Perwakilan Pelajar",
+      membersTitle: "STUDENT COUNCIL MEMBERS",
+      missionTitle: "🎯 Mission",
+      missionText: "1. Create an inclusive campus where every student is valued regardless of differences.<br>2. Serve as a fair bridge between students and management so every voice is heard.",
+      visionTitle: "🪶 Vision",
+      visionText: "Foster a united, harmonious student community that is grateful for the blessings.",
+      portalBtn: "➡️ Student Complaint Portal"
+    },
+    zh: {
+      headerTitle: "SEMSIRA 官方学生会门户",
+      headerSub: "学生代表理事会",
+      membersTitle: "学生会成员",
+      missionTitle: "🎯 使命",
+      missionText: "1. 创建一个包容的校园，每个学生都受到重视，不论差异。<br>2. 成为学生与管理层之间的公平桥梁，让每个声音被听到。",
+      visionTitle: "🪶 愿景",
+      visionText: "培养一个团结、和谐的学生社区，心怀感恩。",
+      portalBtn: "➡️ 学生投诉门户"
+    }
+  };
 
-let currentLang = "ms";
-
-function applyTranslation() {
-  const t = translations[currentLang];
-  document.getElementById("title").innerText = t.title;
-  document.getElementById("subtitle").innerText = t.subtitle;
-  document.getElementById("studentPortalBtn").innerText = t.btnText;
-  document.getElementById("mppTitle").innerText = t.mppTitle;
-}
-
-document.getElementById("languageSwitcher").addEventListener("change", function(){
-  currentLang = this.value;
-  applyTranslation();
-});
-
-// Apply default language
-applyTranslation();
-
-// Animasi fade
-window.addEventListener("load", () => {
-  document.querySelectorAll(".mpp-member").forEach((el,i)=>{
-    setTimeout(()=>{ el.classList.add("fade-in"); }, i*200);
+  const langSwitcher = document.getElementById("languageSwitcher");
+  langSwitcher.addEventListener("change", ()=> {
+    const lang = langSwitcher.value;
+    const t = translations[lang];
+    document.getElementById("headerTitle").innerHTML = t.headerTitle;
+    document.getElementById("headerSub").innerHTML = t.headerSub;
+    document.getElementById("membersTitle").innerHTML = t.membersTitle;
+    document.getElementById("missionTitle").innerHTML = t.missionTitle;
+    document.getElementById("missionText").innerHTML = t.missionText;
+    document.getElementById("visionTitle").innerHTML = t.visionTitle;
+    document.getElementById("visionText").innerHTML = t.visionText;
+    document.getElementById("portalBtn").innerHTML = t.portalBtn;
   });
-});
+
+  // Animasi fade-in ahli
+  window.addEventListener("load", () => {
+    document.querySelectorAll(".mpp-member").forEach((el,i)=>{
+      setTimeout(()=>{ el.classList.add("fade-in"); }, i*300);
+    });
+  });
 </script>
 
 </body>
 </html>
-
-
-
 
