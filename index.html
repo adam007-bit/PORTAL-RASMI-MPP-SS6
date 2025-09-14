@@ -10,35 +10,41 @@
 body { font-family: 'Poppins', sans-serif; background:#f8f9fa; }
 header { background:#004080; color:white; padding:40px 20px; text-align:center; }
 header h1 { font-weight:700; font-size:2.5rem; }
-header p { font-size:1.2rem; }
-.navbar { background:#004080; padding:15px; text-align:center; }
-.navbar a { color:white; text-decoration:none; font-weight:600; margin:0 10px; padding:8px 15px; border-radius:8px; background:#0066cc; }
-.navbar a:hover { background:#0050a0; }
 .mpp-section { padding:60px 20px; background:white; }
 .mpp-member { border:none; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:transform 0.3s; opacity:0; }
 .mpp-member:hover { transform:scale(1.05); }
 .fade-in { animation: fadeInUp 1s forwards; }
-@keyframes fadeInUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
-.misi-visi { padding:60px 20px; text-align:center; }
-.misi-visi h2 { font-family:'Playfair Display', serif; font-size:2rem; margin-bottom:20px; }
-.misi-visi p { font-size:1.1rem; max-width:700px; margin:auto; }
+@keyframes fadeInUp {
+  from { opacity:0; transform:translateY(40px); }
+  to { opacity:1; transform:translateY(0); }
+}
+.home-btn { text-align:center; margin-top:20px; }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Portal Rasmi MPP SEMSIRA</h1>
-  <p>Majlis Perwakilan Pelajar</p>
+  <h1 id="title">Portal Rasmi MPP SEMSIRA</h1>
+  <p id="subtitle">Majlis Perwakilan Pelajar</p>
+
+  <!-- Language Selector -->
+  <div class="mt-3">
+    <select id="languageSwitcher" class="form-select w-auto d-inline">
+      <option value="ms">🇲🇾 BM</option>
+      <option value="en">🇬🇧 EN</option>
+      <option value="zh">🇨🇳 中文</option>
+    </select>
+  </div>
+
+  <!-- Button to Portal Pelajar -->
+  <div class="home-btn">
+    <a id="studentPortalBtn" href="portal_pelajar.html" class="btn btn-light btn-lg">➡️ Portal Pelajar Aduan</a>
+  </div>
 </header>
 
-<nav class="navbar">
-  <!-- Link terus ke portal pelajar -->
-  <a href="https://adam007-bit.github.io/PORTAL-E-ADUAN-MPP/" target="_blank">Portal Pelajar</a>
-  <!-- Bos boleh tambah link lain, contoh portal admin atau website belajar -->
-</nav>
-
+<!-- Ahli MPP -->
 <section class="mpp-section text-center">
-  <h2 class="mb-4">Ahli Majlis Perwakilan Pelajar</h2>
+  <h2 class="mb-4" id="mppTitle">Ahli Majlis Perwakilan Pelajar</h2>
   <div class="row justify-content-center g-4">
     <div class="col-md-3">
       <div class="card p-3 mpp-member">
@@ -67,22 +73,80 @@ header p { font-size:1.2rem; }
         </div>
       </div>
     </div>
+    <div class="col-md-3">
+      <div class="card p-3 mpp-member">
+        <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle" alt="Ahli">
+        <div class="card-body">
+          <h5 class="card-title">Aisyah Rahman</h5>
+          <p class="card-text">Penolong Setiausaha</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card p-3 mpp-member">
+        <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle" alt="Ahli">
+        <div class="card-body">
+          <h5 class="card-title">Hafiz Amir</h5>
+          <p class="card-text">Bendahari</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card p-3 mpp-member">
+        <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle" alt="Ahli">
+        <div class="card-body">
+          <h5 class="card-title">Sarah Lim</h5>
+          <p class="card-text">Penolong Bendahari</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="misi-visi">
-  <h2>🎯 Misi</h2>
-  <p>1. Mewujudkan suasana kampus yang inklusif, di mana setiap pelajar dihargai tanpa mengira perbezaan.<br>
-     2. Menjadi jambatan adil antara pelajar dan pihak pengurusan agar setiap suara didengar dan dihargai.</p>
-
-  <h2 class="mt-5">🪶 Visi</h2>
-  <p>Membentuk komuniti pelajar yang bersatu, harmoni dan sentiasa bersyukur dengan nikmat yang ada.</p>
-</section>
-
 <script>
+const translations = {
+  ms: {
+    title: "Portal Rasmi MPP SEMSIRA",
+    subtitle: "Majlis Perwakilan Pelajar",
+    btnText: "➡️ Portal Pelajar Aduan",
+    mppTitle: "Ahli Majlis Perwakilan Pelajar"
+  },
+  en: {
+    title: "Official SEMSIRA Student Council Portal",
+    subtitle: "Majlis Perwakilan Pelajar",
+    btnText: "➡️ Student Complaint Portal",
+    mppTitle: "Student Council Members"
+  },
+  zh: {
+    title: "SEMSIRA 学生会官方网站",
+    subtitle: "学生代表理事会",
+    btnText: "➡️ 学生投诉门户",
+    mppTitle: "学生会成员"
+  }
+};
+
+let currentLang = "ms";
+
+function applyTranslation() {
+  const t = translations[currentLang];
+  document.getElementById("title").innerText = t.title;
+  document.getElementById("subtitle").innerText = t.subtitle;
+  document.getElementById("studentPortalBtn").innerText = t.btnText;
+  document.getElementById("mppTitle").innerText = t.mppTitle;
+}
+
+document.getElementById("languageSwitcher").addEventListener("change", function(){
+  currentLang = this.value;
+  applyTranslation();
+});
+
+// Apply default language
+applyTranslation();
+
+// Animasi fade
 window.addEventListener("load", () => {
   document.querySelectorAll(".mpp-member").forEach((el,i)=>{
-    setTimeout(()=>{ el.classList.add("fade-in"); }, i*300);
+    setTimeout(()=>{ el.classList.add("fade-in"); }, i*200);
   });
 });
 </script>
