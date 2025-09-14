@@ -10,17 +10,18 @@
 body { font-family: 'Poppins', sans-serif; background:#f8f9fa; }
 header { background:#004080; color:white; padding:40px 20px; text-align:center; }
 header h1 { font-weight:700; font-size:2.5rem; }
+header p { font-size:1.2rem; }
+.navbar { background:#004080; padding:15px; text-align:center; }
+.navbar a { color:white; text-decoration:none; font-weight:600; margin:0 10px; padding:8px 15px; border-radius:8px; background:#0066cc; }
+.navbar a:hover { background:#0050a0; }
 .mpp-section { padding:60px 20px; background:white; }
 .mpp-member { border:none; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:transform 0.3s; opacity:0; }
 .mpp-member:hover { transform:scale(1.05); }
 .fade-in { animation: fadeInUp 1s forwards; }
 @keyframes fadeInUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
-.misi-visi { padding:60px 20px; }
+.misi-visi { padding:60px 20px; text-align:center; }
 .misi-visi h2 { font-family:'Playfair Display', serif; font-size:2rem; margin-bottom:20px; }
-.misi-visi p { font-size:1.1rem; }
-.navbar { background:#004080; }
-.navbar a { color:white; margin-right:15px; text-decoration:none; font-weight:600; }
-.navbar a:hover { text-decoration:underline; }
+.misi-visi p { font-size:1.1rem; max-width:700px; margin:auto; }
 </style>
 </head>
 <body>
@@ -30,9 +31,11 @@ header h1 { font-weight:700; font-size:2.5rem; }
   <p>Majlis Perwakilan Pelajar</p>
 </header>
 
-<nav class="navbar text-center mb-4">
-  <a href="https://link-ke-pelajar.netlify.app">Portal Pelajar</a>
-  <a href="https://link-ke-admin.netlify.app">Portal Admin</a>
+<nav class="navbar">
+  <!-- Link terus ke portal pelajar -->
+  <a href="https://link-ke-portal-pelajar.netlify.app" target="_blank">Portal Pelajar</a>
+  <!-- Bos boleh tambah link lain, contoh portal admin atau website belajar -->
+  <a href="https://link-ke-website-belajar.netlify.app" target="_blank">Website Belajar</a>
 </nav>
 
 <section class="mpp-section text-center">
@@ -68,11 +71,10 @@ header h1 { font-weight:700; font-size:2.5rem; }
   </div>
 </section>
 
-<section class="misi-visi text-center">
-  <h2> 🎯 Misi</h2>
-  <p1>1. Mewujudkan suasana kampus yang inklusif, di mana setiap pelajar dihargai tanpa mengira perbezaan.</p1>
-   <p2>2. Menjadi jambatan adil antara pelajar dan pihak pengurusan agar setiap suara didengar dan dihargai.</p2>
-
+<section class="misi-visi">
+  <h2>🎯 Misi</h2>
+  <p>1. Mewujudkan suasana kampus yang inklusif, di mana setiap pelajar dihargai tanpa mengira perbezaan.<br>
+     2. Menjadi jambatan adil antara pelajar dan pihak pengurusan agar setiap suara didengar dan dihargai.</p>
 
   <h2 class="mt-5">🪶 Visi</h2>
   <p>Membentuk komuniti pelajar yang bersatu, harmoni dan sentiasa bersyukur dengan nikmat yang ada.</p>
