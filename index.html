@@ -3,132 +3,193 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Countdown Tarikh Penting</title>
+  <title>Portal Rasmi MPP SEMSIRA</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <style>
-    body { background:#f8f9fa; }
+    body { font-family: 'Poppins', sans-serif; background:#f8f9fa; }
+    header { background:#004080; color:white; padding:40px 20px; text-align:center; }
+    header h1 { font-weight:700; font-size:2.5rem; }
+    .mpp-section { padding:60px 20px; background:white; }
+    .mpp-member { border:none; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:transform 0.3s; opacity:0; text-align:center; }
+    .mpp-member:hover { transform:scale(1.05); }
+    .fade-in { animation: fadeInUp 1s forwards; }
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(40px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+    .misi-visi { padding:60px 20px; text-align:center; }
+    .misi-visi h2 { font-family:'Playfair Display', serif; font-size:2rem; margin-bottom:20px; }
+    .misi-visi p { font-size:1.1rem; }
+    .btn-aduan { display:inline-block; margin-top:30px; padding:12px 24px; background:#004080; color:white; font-weight:600; border-radius:8px; text-decoration:none; transition:0.3s; }
+    .btn-aduan:hover { background:#0066cc; }
+
+    /* Countdown */
     .countdown-box {
-      max-width: 500px;
+      max-width: 600px;
       margin: 40px auto;
       padding: 30px;
       border-radius: 12px;
       background: white;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       text-align: center;
-    }
-    .timer-container {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin: 20px 0;
-    }
-    .flip-box {
-      background: #0d6efd;
-      color: #fff;
-      font-size: 1.8rem;
-      font-weight: bold;
-      padding: 15px 10px;
-      border-radius: 8px;
-      width: 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .flip-box span {
-      display: block;
-      animation: flip 1s ease-in-out;
-    }
-    @keyframes flip {
-      0% { transform: rotateX(0deg); }
-      50% { transform: rotateX(90deg); }
-      100% { transform: rotateX(0deg); }
-    }
-    .label {
-      font-size: 0.8rem;
-      margin-top: 5px;
-      color: #333;
     }
     .slogan {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #004080;
       margin-top: 15px;
-      font-weight: bold;
-      font-size: 1.2rem;
-      color: #333;
     }
-    .slogan span {
-      color: #0d6efd;
+    .flip {
+      display: inline-block;
+      background: #004080;
+      color: white;
+      padding: 15px;
+      margin: 5px;
+      font-size: 2rem;
+      font-weight: bold;
+      border-radius: 8px;
+      min-width: 70px;
+      animation: flip 1s infinite;
+    }
+    @keyframes flip {
+      0% { transform: rotateX(0); }
+      50% { transform: rotateX(180deg); }
+      100% { transform: rotateX(360deg); }
     }
   </style>
 </head>
 <body>
-<div class="container">
-  <div class="countdown-box">
-    <h2>📅 Countdown Tarikh Penting</h2>
-    <p id="eventName" class="fw-bold">Tarikh Peperiksaan SPM</p>
-    
-    <div id="timer" class="timer-container">
-      <div>
-        <div class="flip-box"><span id="days">00</span></div>
-        <div class="label">Hari</div>
-      </div>
-      <div>
-        <div class="flip-box"><span id="hours">00</span></div>
-        <div class="label">Jam</div>
-      </div>
-      <div>
-        <div class="flip-box"><span id="minutes">00</span></div>
-        <div class="label">Minit</div>
-      </div>
-      <div>
-        <div class="flip-box"><span id="seconds">00</span></div>
-        <div class="label">Saat</div>
+
+<header>
+  <h1 id="headerTitle">PORTAL RASMI MPP SEMSIRA</h1>
+  <p id="headerSub">Majlis Perwakilan Pelajar</p>
+  <select id="languageSwitcher" class="form-select w-auto d-inline mt-3">
+    <option value="ms">🇲🇾 BM</option>
+    <option value="en">🇬🇧 EN</option>
+    <option value="zh">🇨🇳 中文</option>
+  </select>
+</header>
+
+<!-- Countdown + Slogan -->
+<section class="countdown-box">
+  <h2>📅 Countdown Peperiksaan STPM</h2>
+  <div id="timer">
+    <span class="flip" id="days">00</span> Hari
+    <span class="flip" id="hours">00</span> Jam
+    <span class="flip" id="minutes">00</span> Minit
+    <span class="flip" id="seconds">00</span> Saat
+  </div>
+  <p class="slogan">#SS6 #STRIVEFOR4</p>
+</section>
+
+<!-- Ahli MPP -->
+<section class="mpp-section">
+  <h2 id="membersTitle" class="text-center mb-4">AHLI MAJLIS PERWAKILAN PELAJAR</h2>
+  <div class="row justify-content-center g-4">
+    <div class="col-md-3">
+      <div class="card p-3 mpp-member">
+        <img src="images/intan.png" class="card-img-top rounded-circle" alt="Pengerusi">
+        <div class="card-body">
+          <h5 class="card-title">INTAN SYAFIQAH BINTI BAHAUDDIN SELAMET</h5>
+          <p class="card-text"><b>Pengerusi</b></p>
+        </div>
       </div>
     </div>
-
-    <p><small id="targetDate"></small></p>
-    <div class="slogan">#SS6 <span>#STRIVEFOR4</span></div>
+    <div class="col-md-3">
+      <div class="card p-3 mpp-member">
+        <img src="images/nur.png" class="card-img-top rounded-circle" alt="Timbalan Pengerusi">
+        <div class="card-body">
+          <h5 class="card-title">MUHAMMAD NUR ZAKWAN BIN MUHAMMAD HAFIZULLAH</h5>
+          <p class="card-text"><b>Timbalan Pengerusi</b></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card p-3 mpp-member">
+        <img src="images/chir.png" class="card-img-top rounded-circle" alt="Setiausaha">
+        <div class="card-body">
+          <h5 class="card-title">CHIRHASAK SUWANSOMPHONG</h5>
+          <p class="card-text"><b>Setiausaha</b></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card p-3 mpp-member">
+        <img src="images/foo.png" class="card-img-top rounded-circle" alt="Bendahari">
+        <div class="card-body">
+          <h5 class="card-title">FOO KAH SIANG</h5>
+          <p class="card-text"><b>Bendahari</b></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card p-3 mpp-member">
+        <img src="images/nurin.png" class="card-img-top rounded-circle" alt="Penolong Setiausaha">
+        <div class="card-body">
+          <h5 class="card-title">NURIN ATEEQAH YASMIM BINTI NOR AZEMI</h5>
+          <p class="card-text"><b>Penolong Setiausaha</b></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card p-3 mpp-member">
+        <img src="images/rafi.png" class="card-img-top rounded-circle" alt="Penolong Bendahari">
+        <div class="card-body">
+          <h5 class="card-title">RAFIUDDIN</h5>
+          <p class="card-text"><b>Penolong Bendahari</b></p>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+
+  <div class="text-center">
+    <a href="https://adam007-bit.github.io/PORTAL-E-ADUAN-MPP/" target="_blank" class="btn-aduan" id="portalBtn">➡️ Portal Aduan Pelajar</a>
+  </div>
+</section>
+
+<!-- Misi & Visi -->
+<section class="misi-visi">
+  <h2 id="missionTitle">🎯 Misi</h2>
+  <p id="missionText">
+1. Mewujudkan suasana kampus yang inklusif, di mana setiap pelajar dihargai tanpa mengira perbezaan.<br>
+2. Menjadi jambatan adil antara pelajar dan pihak pengurusan agar setiap suara didengar dan dihargai.
+  </p>
+
+  <h2 id="visionTitle" class="mt-5">🪶 Visi</h2>
+  <p id="visionText">
+Membentuk komuniti pelajar yang bersatu, harmoni dan sentiasa bersyukur dengan nikmat yang ada.
+  </p>
+</section>
 
 <script>
-  // 👉 Ubah tarikh & nama event kat sini
-  const eventName = "Peperiksaan SPM";
-  const eventDate = new Date("2025-11-15 08:00:00").getTime();
-
-  document.getElementById("eventName").innerText = eventName;
-  document.getElementById("targetDate").innerText = new Date(eventDate).toLocaleString();
-
-  function updateCountdown() {
+  // Countdown STPM
+  const eventDate = new Date("2026-01-13 08:00:00").getTime();
+  setInterval(() => {
     const now = new Date().getTime();
     const distance = eventDate - now;
-
     if (distance < 0) {
-      document.getElementById("timer").innerHTML = "⏰ Event sudah bermula!";
+      document.getElementById("timer").innerHTML = "⏰ Peperiksaan STPM sudah bermula!";
       return;
     }
-
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+  }, 1000);
 
-    setVal("days", days);
-    setVal("hours", hours);
-    setVal("minutes", minutes);
-    setVal("seconds", seconds);
-  }
-
-  function setVal(id, val) {
-    const el = document.getElementById(id);
-    if (el.innerText !== val.toString()) {
-      el.innerText = val;
-      el.style.animation = "none";
-      void el.offsetWidth; // reset animation
-      el.style.animation = null;
-    }
-  }
-
-  setInterval(updateCountdown, 1000);
+  // Animasi ahli MPP
+  window.addEventListener("load", () => {
+    document.querySelectorAll(".mpp-member").forEach((el,i)=>{
+      setTimeout(()=>{ el.classList.add("fade-in"); }, i*300);
+    });
+  });
 </script>
+
 </body>
 </html>
 
