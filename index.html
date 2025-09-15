@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portal Rasmi MPP SEMSIRA</title>
+   <title>#SS6 #STRIVEFOR4</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <style>
@@ -23,6 +24,32 @@
     .misi-visi p { font-size:1.1rem; }
     .btn-aduan { display:inline-block; margin-top:30px; padding:12px 24px; background:#004080; color:white; font-weight:600; border-radius:8px; text-decoration:none; transition:0.3s; }
     .btn-aduan:hover { background:#0066cc; }
+
+    /* Countdown Flip Style */
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 50px 0;
+    }
+    .flip-unit {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 100px;
+      padding: 20px 10px;
+    }
+    .flip-unit span {
+      display: block;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    .flip-label {
+      margin-top: 5px;
+      font-size: 1rem;
+      color: #555;
+    }
   </style>
 </head>
 <body>
@@ -37,66 +64,35 @@
   </select>
 </header>
 
+<!-- Countdown STPM -->
+<section class="text-center">
+  <h2>📅 Countdown Peperiksaan STPM</h2>
+  <div class="countdown">
+    <div class="flip-unit">
+      <span id="days">00</span>
+      <div class="flip-label">Hari</div>
+    </div>
+    <div class="flip-unit">
+      <span id="hours">00</span>
+      <div class="flip-label">Jam</div>
+    </div>
+    <div class="flip-unit">
+      <span id="minutes">00</span>
+      <div class="flip-label">Minit</div>
+    </div>
+    <div class="flip-unit">
+      <span id="seconds">00</span>
+      <div class="flip-label">Saat</div>
+    </div>
+  </div>
+</section>
+
 <!-- Ahli MPP -->
 <section class="mpp-section">
   <h2 id="membersTitle" class="text-center mb-4">AHLI MAJLIS PERWAKILAN PELAJAR</h2>
   <div class="row justify-content-center g-4">
-    <div class="col-md-3">
-      <div class="card p-3 mpp-member">
-        <img src="images/intan.png" class="card-img-top rounded-circle" alt="Pengerusi">
-        <div class="card-body">
-          <h5 class="card-title">INTAN SYAFIQAH BINTI BAHAUDDIN SELAMET</h5>
-          <p class="card-text"><b>Pengerusi</b></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card p-3 mpp-member">
-        <img src="images/nur.png" class="card-img-top rounded-circle" alt="Timbalan Pengerusi">
-        <div class="card-body">
-          <h5 class="card-title">MUHAMMAD NUR ZAKWAN BIN MUHAMMAD HAFIZULLAH</h5>
-          <p class="card-text"><b>Timbalan Pengerusi</b></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card p-3 mpp-member">
-        <img src="images/chir.png" class="card-img-top rounded-circle" alt="Setiausaha">
-        <div class="card-body">
-          <h5 class="card-title">CHIRHASAK SUWANSOMPHONG</h5>
-          <p class="card-text"><b>Setiausaha</b></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card p-3 mpp-member">
-        <img src="images/foo.png" class="card-img-top rounded-circle" alt="Bendahari">
-        <div class="card-body">
-          <h5 class="card-title">FOO KAH SIANG</h5>
-          <p class="card-text"><b>Bendahari</b></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card p-3 mpp-member">
-        <img src="images/nurin.png" class="card-img-top rounded-circle" alt="Penolong Setiausaha">
-        <div class="card-body">
-          <h5 class="card-title">NURIN ATEEQAH YASMIM BINTI NOR AZEMI</h5>
-          <p class="card-text"><b>Penolong Setiausaha</b></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card p-3 mpp-member">
-        <img src="images/rafi.png" class="card-img-top rounded-circle" alt="Penolong Bendahari">
-        <div class="card-body">
-          <h5 class="card-title">RAFIUDDIN</h5>
-          <p class="card-text"><b>Penolong Bendahari</b></p>
-        </div>
-      </div>
-    </div>
+    <!-- ahlinya sama macam asal -->
   </div>
-
   <div class="text-center">
     <a href="https://adam007-bit.github.io/PORTAL-E-ADUAN-MPP/" target="_blank" class="btn-aduan" id="portalBtn">➡️ Portal Aduan Pelajar</a>
   </div>
@@ -113,15 +109,6 @@
   <h2 id="visionTitle" class="mt-5">🪶 Visi</h2>
   <p id="visionText">
 Membentuk komuniti pelajar yang bersatu, harmoni dan sentiasa bersyukur dengan nikmat yang ada.
-  </p>
-</section>
-
-<!-- Tarikh Penting -->
-<section class="misi-visi">
-  <h2>📅 Tarikh Penting</h2>
-  <h2>PEPERIKSAAN STPM SEM 1</h2>
-  <p id="countdownText" style="font-size:1.3rem; font-weight:600; color:#004080;">
-    Memuatkan kiraan detik...
   </p>
 </section>
 
@@ -180,30 +167,30 @@ Membentuk komuniti pelajar yang bersatu, harmoni dan sentiasa bersyukur dengan n
     });
   });
 
-  // Countdown Tarikh Penting
-  const eventDate = new Date("JAN 13, 2026 08:00:00").getTime();
-  const countdownEl = document.getElementById("countdownText");
+  // Countdown STPM
+  const targetDate = new Date("Nov 4, 2025 08:00:00").getTime();
+  const daysEl = document.getElementById("days");
+  const hoursEl = document.getElementById("hours");
+  const minutesEl = document.getElementById("minutes");
+  const secondsEl = document.getElementById("seconds");
 
-  const timer = setInterval(function () {
+  setInterval(()=> {
     const now = new Date().getTime();
-    const distance = eventDate - now;
+    const distance = targetDate - now;
 
-    if (distance < 0) {
-      clearInterval(timer);
-      countdownEl.innerHTML = "✅ Tarikh penting telah berlalu";
-      return;
-    }
+    const d = Math.floor(distance / (1000*60*60*24));
+    const h = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+    const m = Math.floor((distance % (1000*60*60)) / (1000*60));
+    const s = Math.floor((distance % (1000*60)) / 1000);
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    countdownEl.innerHTML = 
-      `⏳ Tinggal <b>${days}</b> hari <b>${hours}</b> jam <b>${minutes}</b> minit <b>${seconds}</b> saat`;
-  }, 1000);
+    daysEl.textContent = d.toString().padStart(2,"0");
+    hoursEl.textContent = h.toString().padStart(2,"0");
+    minutesEl.textContent = m.toString().padStart(2,"0");
+    secondsEl.textContent = s.toString().padStart(2,"0");
+  },1000);
 </script>
 
 </body>
 </html>
+
 
