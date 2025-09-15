@@ -116,6 +116,14 @@ Membentuk komuniti pelajar yang bersatu, harmoni dan sentiasa bersyukur dengan n
   </p>
 </section>
 
+<!-- Tarikh Penting -->
+<section class="misi-visi">
+  <h2>📅 Tarikh Penting</h2>
+  <p id="countdownText" style="font-size:1.3rem; font-weight:600; color:#004080;">
+    Memuatkan kiraan detik...
+  </p>
+</section>
+
 <script>
   const translations = {
     ms: {
@@ -170,6 +178,29 @@ Membentuk komuniti pelajar yang bersatu, harmoni dan sentiasa bersyukur dengan n
       setTimeout(()=>{ el.classList.add("fade-in"); }, i*300);
     });
   });
+
+  // Countdown Tarikh Penting
+  const eventDate = new Date("JAN 13, 2026 08:00:00").getTime();
+  const countdownEl = document.getElementById("countdownText");
+
+  const timer = setInterval(function () {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    if (distance < 0) {
+      clearInterval(timer);
+      countdownEl.innerHTML = "✅ Tarikh penting telah berlalu";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    countdownEl.innerHTML = 
+      `⏳ Tinggal <b>${days}</b> hari <b>${hours}</b> jam <b>${minutes}</b> minit <b>${seconds}</b> saat`;
+  }, 1000);
 </script>
 
 </body>
