@@ -84,8 +84,6 @@
     <span class="flip" id="seconds">00</span> Saat
   </div>
   <p class="slogan">#SS6 #STRIVEFOR4</p>
-
-  <!-- ✅ Butang baru -->
   <a href="https://adam007-bit.github.io/PORTAL-STUDY-4.00/index.html" target="_blank" class="btn btn-success mt-3">📖 Jom Study Sekarang</a>
 </section>
 
@@ -142,7 +140,7 @@
       <div class="card p-3 mpp-member">
         <img src="images/rafi.png" class="card-img-top rounded-circle" alt="Penolong Bendahari">
         <div class="card-body">
-          <h5 class="card-title">RAFIUDDIN</h5>
+          <h5 class="card-title">MUHAMMAD RAFIUDDIN BIN ABDUL GANI</h5>
           <p class="card-text"><b>Penolong Bendahari</b></p>
         </div>
       </div>
@@ -176,7 +174,7 @@ Membentuk komuniti pelajar yang bersatu, harmoni dan sentiasa bersyukur dengan n
     if (el.innerText !== newValue.toString()) {
       el.innerText = newValue;
       el.classList.remove("animate");
-      void el.offsetWidth; // reset animation
+      void el.offsetWidth;
       el.classList.add("animate");
     }
   }
@@ -205,7 +203,60 @@ Membentuk komuniti pelajar yang bersatu, harmoni dan sentiasa bersyukur dengan n
       setTimeout(()=>{ el.classList.add("fade-in"); }, i*300);
     });
   });
+
+  // Language Switcher Logic
+  const translations = {
+    ms: {
+      headerTitle: "PORTAL RASMI MPP SEMSIRA",
+      headerSub: "Majlis Perwakilan Pelajar",
+      membersTitle: "AHLI MAJLIS PERWAKILAN PELAJAR",
+      portalBtn: "➡️ Portal Aduan Pelajar",
+      missionTitle: "🎯 Misi",
+      missionText: `1. Mewujudkan suasana kampus yang inklusif, di mana setiap pelajar dihargai tanpa mengira perbezaan.<br>
+2. Menjadi jambatan adil antara pelajar dan pihak pengurusan agar setiap suara didengar dan dihargai.`,
+      visionTitle: "🪶 Visi",
+      visionText: "Membentuk komuniti pelajar yang bersatu, harmoni dan sentiasa bersyukur dengan nikmat yang ada.",
+    },
+    en: {
+      headerTitle: "OFFICIAL PORTAL OF MPP SEMSIRA",
+      headerSub: "Student Representative Council",
+      membersTitle: "STUDENT REPRESENTATIVE COUNCIL MEMBERS",
+      portalBtn: "➡️ Student Complaint Portal",
+      missionTitle: "🎯 Mission",
+      missionText: `1. Create an inclusive campus environment where every student is valued regardless of differences.<br>
+2. Be a fair bridge between students and management so every voice is heard and appreciated.`,
+      visionTitle: "🪶 Vision",
+      visionText: "To build a student community that is united, harmonious, and grateful for existing blessings.",
+    },
+    zh: {
+      headerTitle: "SEMSIRA 学生理事会官方门户",
+      headerSub: "学生代表理事会",
+      membersTitle: "学生代表理事会成员",
+      portalBtn: "➡️ 学生投诉门户",
+      missionTitle: "🎯 使命",
+      missionText: `1. 创建一个包容性的校园环境，尊重每位学生的差异。<br>
+2. 成为学生与管理层之间的公平桥梁，让每个声音都被听见和重视。`,
+      visionTitle: "🪶 愿景",
+      visionText: "建立一个团结、和谐并感恩的学生社群。",
+    }
+  };
+
+  const switcher = document.getElementById("languageSwitcher");
+  switcher.addEventListener("change", (e) => {
+    const lang = e.target.value;
+    const t = translations[lang];
+    if (!t) return;
+    document.getElementById("headerTitle").innerHTML = t.headerTitle;
+    document.getElementById("headerSub").innerHTML = t.headerSub;
+    document.getElementById("membersTitle").innerHTML = t.membersTitle;
+    document.getElementById("portalBtn").innerHTML = t.portalBtn;
+    document.getElementById("missionTitle").innerHTML = t.missionTitle;
+    document.getElementById("missionText").innerHTML = t.missionText;
+    document.getElementById("visionTitle").innerHTML = t.visionTitle;
+    document.getElementById("visionText").innerHTML = t.visionText;
+  });
 </script>
 
 </body>
 </html>
+
